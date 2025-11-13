@@ -25,6 +25,7 @@ Layer	Tools
 Frontend	React, Vite, TypeScript, Tailwind CSS
 Backend	Node.js, Express, MongoDB, Mongoose
 Auth	JWT, Secure Cookies
+
 ⚙️ Getting Started
 1. Clone the Repository
 git clone https://github.com/your-username/trackizer.git
