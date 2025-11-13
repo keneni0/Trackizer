@@ -8,23 +8,23 @@ Trackizer is a modern full-stack web app to manage and track your digital subscr
 
 🚀 Features
 
-🔐 User Registration & Login (JWT Auth)
+          🔐 User Registration & Login (JWT Auth)
 
-➕ Add / ✏️ Edit / ❌ Delete Subscriptions
+➕           Add / ✏️ Edit / ❌ Delete Subscriptions
 
-📅 Track Renewal Dates, Prices & Categories
+          📅 Track Renewal Dates, Prices & Categories
 
-📊 Dashboard Analytics for Monthly Costs
+          📊 Dashboard Analytics for Monthly Costs
 
-🌗 Dark / Light Theme
+          🌗 Dark / Light Theme
 
-📱 Responsive UI (Desktop & Mobile)
+          📱 Responsive UI (Desktop & Mobile)
 
 🛠️ Tech Stack
 Layer	Tools
-Frontend	React, Vite, TypeScript, Tailwind CSS
-Backend	Node.js, Express, MongoDB, Mongoose
-Auth	JWT, Secure Cookies
+- Frontend	React, Vite, TypeScript, Tailwind CSS
+- Backend	Node.js, Express, MongoDB, Mongoose
+- Auth	JWT, Secure Cookies
 
 ⚙️ Getting Started
 1. Clone the Repository
