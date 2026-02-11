@@ -1,8 +1,9 @@
                                              🧾 Trackizer – Subscription Tracker
+Trackizer is a modern full-stack web app to manage and track your digital subscriptions. Get insights, manage renewals, and avoid surprise charges — all in a sleek, responsive dashboard.
 
 <img width="1353" height="630" alt="image" src="https://github.com/user-attachments/assets/19e6f312-7ccd-439d-9f03-66302864e455" />
 <img width="1332" height="483" alt="image" src="https://github.com/user-attachments/assets/875752c4-61e0-4729-82af-d7732fb5d90a" />
-Trackizer is a modern full-stack web app to manage and track your digital subscriptions. Get insights, manage renewals, and avoid surprise charges — all in a sleek, responsive dashboard.
+
 
 🚀 Features
 
