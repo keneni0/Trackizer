@@ -70,18 +70,18 @@ const Landing: React.FC = () => {
             </div>
             
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-              Free UI Kit for
+              Manage your
               <br />
               <span className="bg-gradient-to-r from-primary-400 to-purple-500 bg-clip-text text-transparent">
-                subscription
+                subscriptions
               </span>
               <br />
-              tracker app
+              effortlessly
             </h1>
-            
+
             <p className="text-xl text-gray-400 max-w-xl leading-relaxed">
-              This is a concept of subscription management app that helps you keep track 
-              of all your subscriptions and never forget to cancel them before they renew.
+              Track all your subscriptions in one place, receive reminders before renewals,
+              and avoid unexpected charges.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
