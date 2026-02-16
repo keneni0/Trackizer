@@ -13,6 +13,7 @@ const handler = serverless(app);
 
 export default async function (req, res) {
   try {
+    console.log('Function invoked -- URL:', req.url, 'Method:', req.method);
     await ensureDbConnected();
     return handler(req, res);
   } catch (error) {
