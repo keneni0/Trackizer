@@ -41,7 +41,8 @@ const connectToDatabase = async () => {
             uri: redactConnectionString(DB_URI)
         });
         console.error('If using MongoDB Atlas, ensure your current IP is whitelisted and the connection string is correct.');
-        process.exit(1);
+            // Throw error instead of exiting so callers can handle it (serverless-friendly)
+            throw error;
     }
 };
 
