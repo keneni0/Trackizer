@@ -24,6 +24,11 @@ app.get("/", (req, res) => {
     res.send("<h1>Welcome to subscription tracker API.</h1>")
 });
 
+// Health check for serverless routing verification
+app.get('/api/ping', (req, res) => {
+    res.json({ status: 'ok', env: process.env.NODE_ENV || 'development' });
+});
+
 // Error middleware should be registered last
 app.use(errorMiddleware);
 
