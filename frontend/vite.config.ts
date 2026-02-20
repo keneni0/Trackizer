@@ -13,4 +13,8 @@ export default defineConfig({
       },
     },
   },
+  preview: {
+    // Allow Railway preview host
+    allowedHosts: ['trackizer-production-f551.up.railway.app'],
+  },
 })

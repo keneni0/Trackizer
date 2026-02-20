@@ -140,6 +140,7 @@ const AddSubscription: React.FC = () => {
                 <option value="EUR">EUR</option>
                 <option value="GBP">GBP</option>
                 <option value="INR">INR</option>
+                <option value="BIRR">BIRR</option>
               </select>
             </div>
 

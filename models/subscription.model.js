@@ -16,7 +16,7 @@ const subscriptionSchema = new mongoose.Schema({
     currency: {
         type: String,
         required: [true, 'Subscription Currency is required'],
-        enum: ['USD', 'EUR', 'GBP', 'INR'],
+        enum: ['USD', 'EUR', 'GBP', 'INR', 'BIRR'],
         default: 'USD'
     },
     frequency: {
