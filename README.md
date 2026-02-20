@@ -1,61 +1,80 @@
                                              🧾 Trackizer – Subscription Tracker
-Trackizer is a modern full-stack web app to manage and track your digital subscriptions. Get insights, manage renewals, and avoid surprise charges — all in a sleek, responsive dashboard.
+Trackizer is a full‑stack web app for keeping all your digital subscriptions in one clean, opinionated dashboard.  
+It helps you see where your money goes each month, avoid surprise renewals, and stay on top of every recurring payment.
 
 <img width="1288" height="620" alt="image" src="https://github.com/user-attachments/assets/7912f872-a2ef-4b4f-9efd-d9e6812985ba" />
 <img width="1353" height="630" alt="image" src="https://github.com/user-attachments/assets/19e6f312-7ccd-439d-9f03-66302864e455" />
 <img width="1332" height="483" alt="image" src="https://github.com/user-attachments/assets/875752c4-61e0-4729-82af-d7732fb5d90a" />
 
+## Features
 
-🚀 Features
+- **Secure authentication**
+  - Email/password registration and login
+  - Passwords hashed before storage
+  - JWT‑based auth with secure cookies and middleware‑protected routes
+  - Blacklist support for invalidated tokens (sign‑out / logout safety)
 
-          🔐 User Registration & Login (JWT Auth)
+- **Subscription management (CRUD)**
+  - Create subscriptions with name, price, currency, frequency, category, payment method, and status
+  - Inline editing from the subscriptions table
+  - Soft workflow for cancelling vs deleting, so you can keep history when needed
 
-➕           Add / ✏️ Edit / ❌ Delete Subscriptions
+- **Renewal dates & smart status**
+  - Store both start date and next renewal date
+  - Automatic computation of renewal date based on frequency (daily / weekly / monthly / yearly)
+  - Auto‑update of status to `expired` when the renewal date has passed
+  - Upcoming renewals view so you can see what’s about to be charged
 
-          📅 Track Renewal Dates, Prices & Categories
+- **Analytics & dashboard**
+  - At‑a‑glance overview of all active subscriptions
+  - Total monthly spending across all services
+  - Breakdown by category (entertainment, food, shopping, other)
+  - Highlight cards and lists designed for quick scanning
 
-          📊 Dashboard Analytics for Monthly Costs
+- **Multi‑currency pricing (including BIRR)**
+  - Store subscription prices as numbers plus a currency code
+  - Supported currencies include `USD`, `EUR`, `GBP`, `INR`, and `BIRR`
+  - All screens show currency + amount together for clarity
 
-          🌗 Dark / Light Theme
+- **Cancellation & blacklist workflow**
+  - Cancel subscriptions without fully deleting them
+  - Token blacklist model to ensure logged‑out sessions can’t be reused
+  - Middleware that checks for blacklisted tokens on protected routes
 
-          📱 Responsive UI (Desktop & Mobile)
+- **Email & workflow hooks**
+  - Email sending utility for notifications (e.g. reminders / workflow events)
+  - Workflow routes wired for background processes and future automation
 
-🛠️ Tech Stack
+- **Dark / light theme**
+  - Tailwind‑powered design with both light and dark modes
+  - Colors tuned for readability on dashboards and data‑heavy screens
 
-     - Frontend	React, Vite, TypeScript, Tailwind CSS
-     - Backend	Node.js, Express, MongoDB, Mongoose
-     - Auth	JWT, Secure Cookies
+- **Responsive UI**
+  - Built with mobile‑first layouts
+  - Works cleanly on phones, tablets, and desktops
 
-⚙️ Getting Started
-  
-     1. Clone the Repository
-    git clone https://github.com/your-username/trackizer.git
-    cd trackizer
+## Tech Stack
 
-     2. Install Dependencies
-    Backend: npm install
-    Frontend:
-        cd frontend
-        npm install
+- **Frontend**: React, Vite, TypeScript, Tailwind CSS
+- **Backend**: Node.js, Express
+- **Database**: MongoDB with Mongoose models
+- **Auth & security**:
+  - JWT + secure cookies
+  - Token blacklist model
+  - Arcjet middleware for bot / abuse protection
+- **Scheduling & email**:
+  - `node-cron` for scheduled jobs (e.g. reminders)
+  - Nodemailer‑based email utility
 
-3. Environment Setup
+## Architecture
 
-   Create a .env file in the project root with your variables (e.g. MongoDB URI, JWT secret, etc).
-
-5. Run the App
-
-     Open two terminals:
-Backend:
-npm run dev
-
-Frontend:
-cd frontend
-npm run dev
-
-🧩 Customization
-
-    - Change theme or logo in /frontend/src/components/layout/Sidebar.tsx
-
-    - Modify routes in /frontend/src/App.tsx
-
-    - Extend data models in /models/
+- Monorepo layout:
+  - `frontend/` – React + Vite SPA for the dashboard experience
+  - backend files at the repo root – Express app, routes, models, and utilities
+- API:
+  - Versioned routes under `/api/v1/*` (e.g. `/api/v1/auth`, `/api/v1/subscriptions`)
+  - Unversioned aliases (`/auth`, `/subscriptions`, etc.) for flexibility in clients
+- Core domain models:
+  - `User` – account and auth information
+  - `Subscription` – recurring payment definition and status
+  - `Blacklist` – invalidated JWTs for logout and session revocation
